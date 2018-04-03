@@ -17,12 +17,12 @@ remotes:
 - "url": "https://github.com/peercoin/peercoin.git"
   "dir": "peercoin"
 files:
-- "qt-win32-4.8.5-gitian-r1.zip"
-- "qt-win64-4.8.5-gitian-r1.zip"
-- "boost-win32-1.55.0-gitian-r1.zip"
-- "boost-win64-1.55.0-gitian-r1.zip"
-- "peercoin-deps-win32-gitian-r1.zip"
-- "peercoin-deps-win64-gitian-r1.zip"
+- "qt-win32-4.8.5-gitian-r8.zip"
+- "qt-win64-4.8.5-gitian-r8.zip"
+- "boost-win32-1.55.0-gitian-r6.zip"
+- "boost-win64-1.55.0-gitian-r6.zip"
+- "peercoin-deps-win32-gitian-r16.zip"
+- "peercoin-deps-win64-gitian-r16.zip"
 script: |
   # Defines
   export TZ=UTC
@@ -44,9 +44,9 @@ script: |
     mkdir -p $STAGING $BUILDDIR $BINDIR
     #
     cd $STAGING
-    unzip $INDIR/qt-win${BITS}-4.8.5-gitian-r1.zip
-    unzip $INDIR/boost-win${BITS}-1.55.0-gitian-r1.zip
-    unzip $INDIR/peercoin-deps-win${BITS}-gitian-r1.zip
+    unzip $INDIR/qt-win${BITS}-4.8.5-gitian-r8.zip
+    unzip $INDIR/boost-win${BITS}-1.55.0-gitian-r6.zip
+    unzip $INDIR/peercoin-deps-win${BITS}-gitian-r16.zip
     if [ "$NEEDDIST" == "1" ]; then
       # Make source code archive which is architecture independent so it only needs to be done once
       cd $HOME/build/peercoin
